@@ -2,4 +2,12 @@ language: java
 jdk:
 - oraclejdk8
 
-script: ant build
+addons:
+  sonarcloud:
+    organization: bvandehei-github
+    
+jdk:
+  - oraclejdk8
+script:
+  - ant build
+  - sonar-scanner
